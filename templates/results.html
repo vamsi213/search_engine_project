@@ -1,0 +1,25 @@
+<!-- results.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results for "{{ search_text }}"</h1>
+    {% if results %}
+        <ul>
+            {% for result in results %}
+                <li>
+                    {{ result }}
+                    <a href="https://www.opensubtitles.org/en/subtitles/{{ result }}" target="_blank">Download from OpenSubtitles (View Subtitle Page)</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No results found for "{{ search_text }}"</p>
+    {% endif %}
+</body>
+</html>
